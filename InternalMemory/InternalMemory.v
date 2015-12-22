@@ -33,7 +33,7 @@ module InternalMemory(clk, reset, rreq, wreq, addr, wdata, rdata, busy, ack);
             prev_read <= cur_read;
         end
     end
-    assign busy = rreq & (~prev_read & cur_read);
+    assign busy = ~prev_read & cur_read;
 
 
 endmodule
